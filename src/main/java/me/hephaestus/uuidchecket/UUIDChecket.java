@@ -7,11 +7,7 @@ public final class UUIDChecket extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        getCommand("uuid").setExecutor(new UUIDCheckerCommand());
 
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 }
