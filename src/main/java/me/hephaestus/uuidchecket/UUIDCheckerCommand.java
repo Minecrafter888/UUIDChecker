@@ -11,27 +11,33 @@ public class UUIDCheckerCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Check if the sender has the required permission
         if (!sender.hasPermission(permission)) {
             sender.sendMessage("You do not have permission to use this command.");
             return true;
         }
-        //for if the player lacks the permission
+
+        // Check if the command is properly used with a player argument
         if (args.length == 0) {
             sender.sendMessage("Usage: /uuid <player>");
             return true;
         }
-        //for if the command is improperly used
+
+        // Get the player name from the command arguments
         String playerName = args[0];
         Player player = Bukkit.getPlayer(playerName);
 
+        // Check if the player exists
         if (player == null) {
             sender.sendMessage("Player not found.");
             return true;
         }
-        //if the player doesn't exist
+
+        // Retrieve and display the UUID of the player
         String uuid = player.getUniqueId().toString();
         sender.sendMessage("UUID of " + playerName + " is: " + uuid);
         return true;
-        //if everything goes right
+        // This code executes if everything goes right
     }
+
 }
