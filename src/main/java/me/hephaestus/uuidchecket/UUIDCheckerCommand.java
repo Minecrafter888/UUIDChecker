@@ -1,6 +1,7 @@
 package me.hephaestus.uuidchecket;
 
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,7 +9,6 @@ import org.bukkit.entity.Player;
 
 public class UUIDCheckerCommand implements CommandExecutor {
     private final String permission = "UUIDChecker.uuid";
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // Check if the sender has the required permission
@@ -28,16 +28,30 @@ public class UUIDCheckerCommand implements CommandExecutor {
         Player player = Bukkit.getPlayer(playerName);
 
         // Check if the player exists
-        if (player == null) {
-            sender.sendMessage("Player not found.");
-            return true;
+        if (player != null) {
+            // Player is online, retrieve and display the UUID
+            String uuid = player.getUniqueId().toString();
+            sender.sendMessage("UUID of " + playerName + " is: " + uuid);
+        } else {
+            // Player is offline, retrieve and display the UUID
+            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
+            String uuid = getUUID(offlinePlayer);
+            if (uuid.isEmpty()) {
+                sender.sendMessage("UUID of " + playerName + " is not available.");
+            } else {
+                sender.sendMessage("UUID of " + playerName + " is: " + uuid);
+            }
         }
 
-        // Retrieve and display the UUID of the player
-        String uuid = player.getUniqueId().toString();
-        sender.sendMessage("UUID of " + playerName + " is: " + uuid);
         return true;
-        // This code executes if everything goes right
+    }
+
+    private String getUUID(OfflinePlayer p) {
+        if (!p.hasPlayedBefore()) {
+            return "";
+        }
+
+        return p.getUniqueId().toString();
     }
 
 }
