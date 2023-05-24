@@ -46,6 +46,7 @@ public class UUIDCheckerCommand implements CommandExecutor {
         return true;
     }
 
+    // Method to retrieve the UUID of an offline player
     private String getUUID(OfflinePlayer p) {
         if (!p.hasPlayedBefore()) {
             return "";
