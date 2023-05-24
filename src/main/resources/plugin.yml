@@ -1,0 +1,4 @@
+name: UUIDChecket
+version: '${project.version}'
+main: me.hephaestus.uuidchecket.UUIDChecket
+api-version: 1.18
