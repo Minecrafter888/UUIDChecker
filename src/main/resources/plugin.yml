@@ -2,3 +2,7 @@ name: UUIDChecket
 version: '${project.version}'
 main: me.hephaestus.uuidchecket.UUIDChecket
 api-version: 1.18
+commands:
+  UUID:
+    description: gets the uuid of a player
+    usage: /<command>
