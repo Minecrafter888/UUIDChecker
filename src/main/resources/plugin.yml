@@ -6,3 +6,4 @@ commands:
   UUID:
     description: gets the uuid of a player
     usage: /<command>
+    permission: UUIDChecker.uuid
