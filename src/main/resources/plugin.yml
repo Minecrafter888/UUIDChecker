@@ -1,6 +1,6 @@
-name: UUIDChecket
+name: UUIDChecker
 version: '${project.version}'
-main: me.hephaestus.uuidchecket.UUIDChecket
+main: me.hephaestus.uuidchecker.UUIDChecker
 api-version: 1.18
 commands:
   UUID:
