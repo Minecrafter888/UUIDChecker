@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.hephaestus</groupId>
-    <artifactId>UUIDChecket</artifactId>
+    <artifactId>UUIDChecker</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>UUIDChecket</name>
+    <name>UUIDChecker</name>
 
     <properties>
         <java.version>1.8</java.version>

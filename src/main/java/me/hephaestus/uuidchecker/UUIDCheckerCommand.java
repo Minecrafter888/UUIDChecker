@@ -1,4 +1,4 @@
-package me.hephaestus.uuidchecket;
+package me.hephaestus.uuidchecker;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

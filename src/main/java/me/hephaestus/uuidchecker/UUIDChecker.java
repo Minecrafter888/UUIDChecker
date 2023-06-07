@@ -1,10 +1,10 @@
-package me.hephaestus.uuidchecket;
+package me.hephaestus.uuidchecker;
 
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class UUIDChecket extends JavaPlugin {
+public final class UUIDChecker extends JavaPlugin {
 
     @Override
     public void onEnable() {
